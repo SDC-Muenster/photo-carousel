@@ -1,15 +1,19 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "sdc-photo-carousel",
+  "version": "1.0",
+  "description": "build backend server and database that can handle millions of records",
+  "author": "jshamoo",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/SDC-Muenster/photo-carousel.git"
+  },
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
     "start": "nodemon node server/index.js",
-    "build": "webpack -d --watch",
+    "build-dev": "webpack -d --watch",
+    "build": "webpack -d",
     "seed": "node database/seed.js",
     "test": "jest",
     "test:watch": "jest --watch"
@@ -46,7 +50,10 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.4.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
     "style-loader": "^1.0.0"
   },
