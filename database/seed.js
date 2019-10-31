@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 const faker = require('faker');
 const homesImages = require('./homes');
 
-mongoose.connect('mongodb://localhost:27017/homes', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
+mongoose.connect('mongodb://127.0.0.1:27017/homes', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true })
   .then(() => {
     console.log('Database connection successful');
     })
@@ -97,7 +97,7 @@ Schema.HomeSet.deleteMany({}, function (err) {
 for (var i = 0; i < homesForDB.length; i++) {
   homesForDB[i].save(function(err, result) {
     if (i === homesForDB.length) {
-      // console.log('data saved');
+      console.log('data saved', result);
       mongoose.disconnect();
     }
   })

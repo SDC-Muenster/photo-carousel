@@ -5,7 +5,7 @@ const port = 3022;
 const Home = require('../database/index').HomeSet;
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/homes', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect('mongodb://127.0.0.1:27017/homes', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
 //body parser
 app.use(bodyParser.json());

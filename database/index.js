@@ -36,4 +36,3 @@ module.exports = {
   EachHome: EachHome,
   HomeSet: HomeSet
 };
-
