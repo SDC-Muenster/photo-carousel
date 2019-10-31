@@ -1,14 +1,19 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('we\'re connected to the DB');
-  // we're connected!
-});
+const { Schema } = mongoose;
+const Console = console;
 
-//each home
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+};
+
+mongoose.connect('mongodb://127.0.0.1:27017/homes', options)
+  .then(Console.log('Connected to DB'))
+  .catch((err) => console.error('Connection error', err));
+
+// each home
 const homeSchema = new Schema({
   id: Number,
   title: String,
@@ -18,21 +23,20 @@ const homeSchema = new Schema({
   rating: Number,
   reviews: Number,
   type: String,
-  favorite: Boolean
+  favorite: Boolean,
 });
 
-//home set
+// home set
 const homeSetSchema = new Schema({
   home_id: Number,
-  homes: [homeSchema]
+  homes: [homeSchema],
 });
 
 
-var EachHome = mongoose.model('EachHome', homeSchema);
-
-var HomeSet =  mongoose.model('HomeSet', homeSetSchema);
+const EachHome = mongoose.model('EachHome', homeSchema);
+const HomeSet = mongoose.model('HomeSet', homeSetSchema);
 
 module.exports = {
-  EachHome: EachHome,
-  HomeSet: HomeSet
+  EachHome,
+  HomeSet,
 };
