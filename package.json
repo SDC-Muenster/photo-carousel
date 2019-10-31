@@ -1,6 +1,6 @@
 {
   "name": "sdc-photo-carousel",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "build backend server and database that can handle millions of records",
   "author": "jshamoo",
   "license": "ISC",

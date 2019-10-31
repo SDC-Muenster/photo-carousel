@@ -1,10 +1,21 @@
 /**
- * These rules enforce the Hack Reactor Style Guide
+ * These rules enforce the Airbnb Style Guide
  *
  * Visit this repo for more information:
- *   https://github.com/reactorcore/eslint-config-hackreactor
+ * https://github.com/airbnb/javascript
  */
 
 module.exports = {
-  extends: 'airbnb-base'
+  'extends': [
+    'airbnb-base',
+  ],
+  'parserOptions': {
+    'ecmaFeatures': {
+      'jsx': true
+    }
+  },
+  'rules': {
+    'no-unused-vars': ["error", { "argsIgnorePattern": "^_" }],
+    'no-console': ["error", { 'allow': ["warn", "error"] }]
+  },
 };
