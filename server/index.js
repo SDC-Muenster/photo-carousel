@@ -1,30 +1,24 @@
 const express = require('express');
-const bodyParser= require('body-parser');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const handler = require('./handler');
+
+const Console = console;
+
 const app = express();
 const port = 3022;
-const Home = require('../database/index').HomeSet;
-const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/homes', {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
-
-//body parser
+app.use(morgan('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-//static
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-//routes
-app.get('/homes', function (req, res) {
-  var homes = Home.find({'home_id': req.query.id})
-    .then((homes) => {
-      res.send(homes);
-    })
-    .catch((err) => {
-     res.send(err);
-    });
-});
+// API
+app.post('/homes', handler.Create);
+app.get('/homes', handler.Read);
+app.put('/homes', handler.Update);
+app.delete('/homes', handler.Delete);
 
-app.listen(port, function() {
-  console.log('Listening on port ' + port);
+app.listen(port, () => {
+  Console.log(`Listening on port ${port}`);
 });
