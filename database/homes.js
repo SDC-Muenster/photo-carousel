@@ -15,7 +15,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_1/home_001_012.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_1/home_001_013.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_1/home_001_014.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_1/home_001_015.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_1/home_001_015.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_001.jpg',
@@ -34,7 +34,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_014.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_015.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_016.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_017.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_2/home_002_017.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_001.jpg',
@@ -55,7 +55,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_016.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_017.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_018.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_019.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_3/home_003_019.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_001.jpg',
@@ -78,7 +78,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_018.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_019.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_020.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_021.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_4/home_004_021.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_001.jpg',
@@ -95,7 +95,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_012.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_013.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_014.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_015.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_5/home_005_015.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_001.jpg',
@@ -115,7 +115,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_015.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_016.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_017.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_018.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_6/home_006_018.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_001.jpg',
@@ -132,7 +132,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_012.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_013.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_014.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_015.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_7/home_007_015.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_001.jpg',
@@ -152,7 +152,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_015.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_016.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_017.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_018.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_8/home_008_018.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_001.jpg',
@@ -173,7 +173,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_016.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_017.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_018.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_019.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_9/home_009_019.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_001.jpg',
@@ -193,7 +193,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_015.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_016.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_017.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_018.jpg'
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_10/home_010_018.jpg',
     ],
     [
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_001.jpg',
@@ -210,7 +210,7 @@ module.exports = {
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_012.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_013.jpg',
       'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_014.jpg',
-      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_015.jpg'
-    ]
-  ]
-}
+      'https://fecteamroshi.s3.us-east-2.amazonaws.com/homes_11/home_011_015.jpg',
+    ],
+  ],
+};
