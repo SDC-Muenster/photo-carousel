@@ -6,7 +6,9 @@ const Console = console;
 const options = {
   useUnifiedTopology: true,
   useNewUrlParser: true,
-  useCreateIndex: true,
+  useCreateIndex: false,
+  // connectTimeoutMS: 300000,
+  // socketTimeoutMS: 300000,
 };
 
 mongoose.connect('mongodb://127.0.0.1:27017/homes', options)
@@ -29,7 +31,7 @@ const homeSchema = new Schema({
 // home set
 const homeSetSchema = new Schema({
   home_id: Number,
-  homes: [homeSchema],
+  homes: Array,
 });
 
 
