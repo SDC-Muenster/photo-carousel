@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 const faker = require('faker');
-const images = require('./homes');
+const images = require('../homes');
 
 const getPhotos = () => {
   const index = faker.random.number({ min: 0, max: images.allHomes.length - 1 });
