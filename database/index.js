@@ -7,8 +7,6 @@ const options = {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: false,
-  // connectTimeoutMS: 300000,
-  // socketTimeoutMS: 300000,
 };
 
 mongoose.connect('mongodb://127.0.0.1:27017/homes', options)
@@ -16,7 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/homes', options)
   .catch((err) => console.error('Connection error', err));
 
 // each home
-const homeSchema = new Schema({
+const similarHomeSchema = new Schema({
   id: Number,
   title: String,
   location: String,
@@ -29,16 +27,16 @@ const homeSchema = new Schema({
 });
 
 // home set
-const homeSetSchema = new Schema({
+const homeSchema = new Schema({
   home_id: Number,
   homes: Array,
 });
 
 
-const EachHome = mongoose.model('EachHome', homeSchema);
-const HomeSet = mongoose.model('HomeSet', homeSetSchema);
+const SimilarHome = mongoose.model('EachHome', similarHomeSchema);
+const Home = mongoose.model('HomeSet', homeSchema);
 
 module.exports = {
-  EachHome,
-  HomeSet,
+  SimilarHome,
+  Home,
 };

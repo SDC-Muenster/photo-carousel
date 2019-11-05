@@ -25,4 +25,4 @@ coverage
 build/
 dist/
 public/bundle.js
-database/tenMillionHomes.json
+*.csv
