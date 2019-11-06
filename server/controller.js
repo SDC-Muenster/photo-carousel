@@ -16,11 +16,12 @@ const Create = (req, res) => {
 // update read controller
 const Read = (req, res) => {
   const { id } = req.query;
-  const queryStr = 'SELECT similarHomesOne, similarHomesTwo, similarHomesThree, similarHomesFour, similarHomesFive, similarHomesSix, similarHomesSeven, similarHomesEight, similarHomesNine, similarHomesTen FROM homes WHERE id = ($1)';
+  const queryStr = 'SELECT similarhomes FROM homes WHERE id = ($1)';
 
   db.query(queryStr, [id])
-    .then((homeIdsObj) => {
-      const similarHomesIds = Object.values(homeIdsObj.rows[0]);
+    .then((data) => {
+      console.log(data.rows[0].similarhomes);
+      const similarHomesIds = data.rows[0].similarhomes;
       const homes = [];
       const promises = similarHomesIds.map((similarHomeId) => (
         db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
