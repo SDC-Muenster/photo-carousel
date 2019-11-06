@@ -24,7 +24,8 @@ class App extends React.Component {
       }
     })
     .then((response) => {
-      this.setState({homes: response.data[0].homes});
+      console.log('response is', response.data); // to be removed
+      this.setState({ homes: response.data}); //changed response.data[0].homes to response.data
     })
     .catch((error) => {
       console.log(error);

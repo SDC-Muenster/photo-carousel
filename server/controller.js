@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const db = require('../database/index');
 
 const Console = console;
@@ -12,14 +13,31 @@ const Create = (req, res) => {
     });
 };
 
+// update read controller
 const Read = (req, res) => {
-  db.HomeSet.find({ home_id: req.query.id })
-    .then((homes) => {
-      if (homes.length === 0) {
-        res.sendStatus(204);
-      } else {
-        res.send(homes);
-      }
+  const { id } = req.query;
+  const queryStr = 'SELECT similarHomesOne, similarHomesTwo, similarHomesThree, similarHomesFour, similarHomesFive, similarHomesSix, similarHomesSeven, similarHomesEight, similarHomesNine, similarHomesTen FROM homes WHERE id = ($1)';
+
+  db.query(queryStr, [id])
+    .then((homeIdsObj) => {
+      const similarHomesIds = Object.values(homeIdsObj.rows[0]);
+      const homes = [];
+      const promises = similarHomesIds.map((similarHomeId) => (
+        db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
+          .then((home) => {
+            homes.push(home.rows[0]);
+          })
+          .catch((err) => {
+            console.error(err);
+            res.sendStatus(500);
+          })
+      ));
+      Promise.all(promises)
+        .then(() => {
+          console.log('>>>', homes);
+          res.json(homes);
+        })
+        .catch((err) => console.error(err));
     })
     .catch((err) => {
       console.error(err);
