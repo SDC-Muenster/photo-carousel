@@ -6,7 +6,7 @@ const generateHomes = require('./generateHomes');
 const writeHomesToCsv = () => (
   new Promise((res, _rej) => {
     const writeHomes = fs.createWriteStream(path.join(__dirname, 'homes.csv'));
-    writeHomes.write('id,title,location,cost,rating,reviews,type,favorite,similarHomesOne,similarHomesTwo,similarHomesThree,similarHomesFour,similarHomesFive,similarHomesSix,similarHomesSeven,similarHomesEight,similarHomesNine,similarHomesTen,photoOne,photoTwo,photoThree,photoFour,photoFive,photoSix,photoSeven,photoEight,photoNine,photoTen\n', 'utf8');
+    writeHomes.write('id,title,location,cost,rating,reviews,type,favorite,similarhomes, photos\n', 'utf8');
 
     const writeRecords = (writer, encoding, cb) => {
       let i = 10000;
@@ -40,4 +40,4 @@ console.time('10M');
 writeHomesToCsv();
 
 module.exports = writeHomesToCsv;
-// time: 9 min
+// time: 10.5 min
