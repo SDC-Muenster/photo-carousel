@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
-const client = require('./index');
 const path = require('path');
+const client = require('./index');
+
 
 client
   .connect()
