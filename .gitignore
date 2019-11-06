@@ -26,3 +26,4 @@ build/
 dist/
 public/bundle.js
 *.csv
+_old
