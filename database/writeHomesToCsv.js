@@ -6,7 +6,7 @@ const generateHomes = require('./generateHomes');
 const writeHomesToCsv = () => (
   new Promise((res, _rej) => {
     const writeHomes = fs.createWriteStream(path.join(__dirname, 'homes.csv'));
-    writeHomes.write('id,title,location,cost,rating,reviews,type,favorite,similarhomes, photos\n', 'utf8');
+    writeHomes.write('id,title,location,cost,rating,reviews,type,favorite,similarhomes,photos\n', 'utf8');
 
     const writeRecords = (writer, encoding, cb) => {
       let i = 10000;
