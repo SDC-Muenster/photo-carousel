@@ -16,7 +16,7 @@ class App extends React.Component {
 
 
   componentDidMount(){
-    const homeId = new URL(window.location.href).searchParams.get('id'); //changed house_id to id
+    const homeId = new URL(window.location.href).searchParams.get('id') || 12345; //changed house_id to id & added a default value
     console.log(homeId);
     axios.get('/homes', {
       params: {
@@ -53,5 +53,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('app')
+  document.getElementById('more')
 );

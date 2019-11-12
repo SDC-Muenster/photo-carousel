@@ -8,6 +8,7 @@ const pool = new Pool({
   database: 'mydb',
   password: '',
   port: 5432,
+  max:100,
 });
 
 
