@@ -2,21 +2,8 @@
 const faker = require('faker');
 const images = require('./homeImages');
 
-const getSimilarHomes = (id) => {
-  const similarHomesIds = [];
-  for (let i = 0; i < 10; i += 1) {
-    const index = faker.random.number({ min: 1, max: 10000000 });
-    if (index !== id) {
-      similarHomesIds.push(index);
-    } else {
-      i -= 1;
-    }
-  }
-  return `"{${similarHomesIds.join(',')}}"`;
-};
-
 const getPhotos = () => {
-  const numOfPhotos = faker.random.number({ min: 10, max: 15});
+  const numOfPhotos = faker.random.number({ min: 10, max: 15 });
   const photos = []
   for (let i = 0; i < numOfPhotos; i += 1) {
     const url = images[faker.random.number({ min: 0, max: images.length - 1 })];
@@ -24,7 +11,6 @@ const getPhotos = () => {
   }
   return `"{${photos.join(',')}}"`;
 }
-
 
 let homeId = 0;
 function Home() {
@@ -36,20 +22,19 @@ function Home() {
   this.reviews = faker.random.number();
   this.type = faker.lorem.word();
   this.favorite = faker.random.boolean();
-  this.similarhomes = getSimilarHomes(homeId);
   this.photos = getPhotos();
 }
 // console.log(new Home());
 
-function generateNewHomes(numOfHomes) {
+function generateHomes(numOfHomes) {
   let batch = '';
   for (let k = 1; k <= numOfHomes; k += 1) {
     homeId += 1;
     const oneHome = new Home(homeId);
-    batch += `${oneHome.id},${oneHome.title},${oneHome.location},${oneHome.cost},${oneHome.rating},${oneHome.reviews},${oneHome.type},${oneHome.favorite},${oneHome.similarhomes},${oneHome.photos}\n`;
+    batch += `${oneHome.id},${oneHome.title},${oneHome.location},${oneHome.cost},${oneHome.rating},${oneHome.reviews},${oneHome.type},${oneHome.favorite},${oneHome.photos}\n`;
   }
   return batch;
 }
 // console.log(generateHomes(3));
 
-module.exports = generateNewHomes;
+module.exports = generateHomes;
