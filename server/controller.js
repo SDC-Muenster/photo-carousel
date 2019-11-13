@@ -2,8 +2,8 @@ const db = require('../database/index');
 
 const Create = (req, res) => {
   const queryArgs = [req.body.id, req.body.title, req.body.location, req.body.cost, req.body.rating,
-    req.body.reviews, req.body.type, req.body.favorite, req.body.similarhomes, req.body.photos];
-  const queryStr = 'INSERT INTO newhomes VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)';
+    req.body.reviews, req.body.type, req.body.favorite, req.body.photos];
+  const queryStr = 'INSERT INTO newhomes VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)';
   db.query(queryStr, queryArgs)
     .then(() => {
       res.sendStatus(201);
@@ -64,8 +64,8 @@ const Read = (req, res) => {
 
 const Update = (req, res) => {
   const queryArgs = [req.body.id, req.body.title, req.body.location, req.body.cost, req.body.rating,
-    req.body.reviews, req.body.type, req.body.favorite, req.body.similarhomes, req.body.photos];
-  const queryStr = 'UPDATE newhomes SET title = $2, location = $3, cost = $4, rating = $5, reviews = $6, type = $7, favorite = $8, similarhomes = $9, photos = $10 WHERE id = $1';
+    req.body.reviews, req.body.type, req.body.favorite, req.body.photos];
+  const queryStr = 'UPDATE newhomes SET title = $2, location = $3, cost = $4, rating = $5, reviews = $6, type = $7, favorite = $8, photos = $9 WHERE id = $1';
   db.query(queryStr, queryArgs)
     .then((_result) => {
       // console.log('update success', result.rowCount);
