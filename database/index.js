@@ -1,19 +1,18 @@
-/* eslint-disable no-console */
+require('dotenv').config();
 const { Pool } = require('pg');
-// const path = require('path');
 
 const pool = new Pool({
-  user: 'jenny',
-  host: 'localhost',
-  database: 'mydb',
-  password: '',
-  port: 5432,
-  max:100,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
 });
 
 
 pool
   .connect()
+  // eslint-disable-next-line no-console
   .then(() => console.log('postgres connected'))
   .catch((err) => console.error('postgres connection error', err.stack));
 

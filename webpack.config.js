@@ -1,6 +1,8 @@
+const path = require('path');
+
 module.exports = {
   mode: 'production',
-  entry: __dirname + '/client/app.jsx',
+  entry: path.join(__dirname, 'client/app.jsx'),
   module: {
     rules: [
       {
@@ -9,21 +11,21 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
-        ]
-      }
-    ]
+          'css-loader',
+        ],
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/public'
-  }
+    path: path.join(__dirname, 'public'),
+  },
 };

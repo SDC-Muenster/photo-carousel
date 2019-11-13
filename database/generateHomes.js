@@ -1,10 +1,9 @@
-/* eslint-disable no-console */
 const faker = require('faker');
 const images = require('./homeImages');
 
 const getPhotos = () => {
   const numOfPhotos = faker.random.number({ min: 10, max: 15 });
-  const photos = []
+  const photos = [];
   for (let i = 0; i < numOfPhotos; i += 1) {
     const url = images[faker.random.number({ min: 0, max: images.length - 1 })];
     photos.push(url);
@@ -24,7 +23,6 @@ function Home() {
   this.favorite = faker.random.boolean();
   this.photos = getPhotos();
 }
-// console.log(new Home());
 
 function generateHomes(numOfHomes) {
   let batch = '';

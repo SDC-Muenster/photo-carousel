@@ -27,16 +27,13 @@ const writeHomeRelationToCsv = () => (
       write();
     };
 
-    console.time('100M');
     writeRecords(writeHomeRelation, 'utf8', () => {
       writeHomeRelation.end();
-      console.timeEnd('100M');
       res();
     });
   })
 );
 
-writeHomeRelationToCsv();
 
 module.exports = writeHomeRelationToCsv;
 // time: 52 seconds

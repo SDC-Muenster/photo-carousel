@@ -27,10 +27,8 @@ const writeHomesToCsv = () => (
       write();
     };
 
-    // console.time('10M');
     writeRecords(writeHomes, 'utf8', () => {
       writeHomes.end();
-      // console.timeEnd('10M');
       res();
     });
   })
