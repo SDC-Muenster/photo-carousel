@@ -18,38 +18,38 @@ const db = require('../database/index');
 //     });
 // };
 
-// // read from homes table (NOT IN USE)
-// const _Read = (req, res) => {
-//   const { id } = req.query;
-//   const queryStr = 'SELECT similarhomes FROM homes WHERE id = ($1)';
-
-//   db.query(queryStr, [id])
-//     .then((data) => {
-//       // console.log(data.rows[0].similarhomes);
-//       const similarHomesIds = data.rows[0].similarhomes;
-//       const homes = [];
-//       const promises = similarHomesIds.map((similarHomeId) => (
-//         db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
-//           .then((home) => {
-//             homes.push(home.rows[0]);
-//           })
-//           .catch((err) => {
-//             console.error('read fail', err);
-//             res.sendStatus(500);
-//           })
-//       ));
-//       Promise.all(promises)
-//         .then(() => {
-//           // console.log('>>>', homes);
-//           res.json(homes);
-//         })
-//         .catch((err) => console.error(err));
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.sendStatus(500);
-//     });
-// };
+// read from homes table
+const _Read = (req, res) => {
+  const { id } = req.query;
+  const queryStr = 'SELECT similarhomes FROM homes WHERE id = ($1)';
+  console.log('test');
+  db.query(queryStr, [id])
+    .then((data) => {
+      // console.log(data.rows[0].similarhomes);
+      const similarHomesIds = data.rows[0].similarhomes;
+      const homes = [];
+      const promises = similarHomesIds.map((similarHomeId) => (
+        db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
+          .then((home) => {
+            homes.push(home.rows[0]);
+          })
+          .catch((err) => {
+            console.error('read fail', err);
+            res.sendStatus(500);
+          })
+      ));
+      Promise.all(promises)
+        .then(() => {
+          // console.log('>>>', homes);
+          res.json(homes);
+        })
+        .catch((err) => console.error(err));
+    })
+    .catch((err) => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+};
 
 // read from newhomes and homerelations table;
 const Read = (req, res) => {

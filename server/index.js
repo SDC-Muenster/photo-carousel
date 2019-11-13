@@ -11,7 +11,7 @@ const Console = console;
 const app = express();
 const port = 3022;
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 // app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
