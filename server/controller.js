@@ -16,37 +16,37 @@ const Create = (req, res) => {
 
 /** read from homes table, NOT IN USE */
 // eslint-disable-next-line no-unused-vars
-const $Read = (req, res) => {
-  const { id } = req.query;
-  const queryStr = 'SELECT similarhomes FROM homes WHERE id = ($1)';
-  db.query(queryStr, [id])
-    .then((data) => {
-      const similarHomesIds = data.rows[0].similarhomes;
-      const homes = [];
-      const promises = similarHomesIds.map((similarHomeId) => (
-        db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
-          .then((home) => {
-            homes.push(home.rows[0]);
-          })
-          .catch((err) => {
-            console.error('read fail', err);
-            res.sendStatus(500);
-          })
-      ));
-      Promise.all(promises)
-        .then(() => {
-          res.json(homes);
-        })
-        .catch((err) => {
-          console.error(err);
-          res.sendStatus(500);
-        });
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
+// const $Read = (req, res) => {
+//   const { id } = req.query;
+//   const queryStr = 'SELECT similarhomes FROM homes WHERE id = ($1)';
+//   db.query(queryStr, [id])
+//     .then((data) => {
+//       const similarHomesIds = data.rows[0].similarhomes;
+//       const homes = [];
+//       const promises = similarHomesIds.map((similarHomeId) => (
+//         db.query('SELECT * FROM homes WHERE id = ($1)', [similarHomeId])
+//           .then((home) => {
+//             homes.push(home.rows[0]);
+//           })
+//           .catch((err) => {
+//             console.error('read fail', err);
+//             res.sendStatus(500);
+//           })
+//       ));
+//       Promise.all(promises)
+//         .then(() => {
+//           res.json(homes);
+//         })
+//         .catch((err) => {
+//           console.error(err);
+//           res.sendStatus(500);
+//         });
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
 
 /** read from newhomes and homerelations tables */
 const Read = (req, res) => {
@@ -61,6 +61,20 @@ const Read = (req, res) => {
       res.sendStatus(500);
     });
 };
+
+/** read from combined tables */
+// const $$Read = (req, res) => {
+//   const { id } = req.query;
+//   const queryStr = 'SELECT * FROM combined WHERE homeid = $1';
+//   db.query(queryStr, [id])
+//     .then((data) => {
+//       res.json(data.rows);
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.sendStatus(500);
+//     });
+// };
 
 const Update = (req, res) => {
   const queryArgs = [req.body.id, req.body.title, req.body.location, req.body.cost, req.body.rating,

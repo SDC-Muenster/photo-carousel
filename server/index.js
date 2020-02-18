@@ -2,7 +2,7 @@ require('newrelic');
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-// const morgan = require('morgan');
+const morgan = require('morgan');
 const controller = require('./controller');
 
 
@@ -11,7 +11,7 @@ const Console = console;
 const app = express();
 const port = process.env.PORT;
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
