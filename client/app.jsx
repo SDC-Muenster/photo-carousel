@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import MainCarousel from './components/MainCarousel.jsx'
 import './styles/style.css';
@@ -51,7 +50,4 @@ class App extends React.Component {
   };
 };
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('more')
-);
+export default App;
