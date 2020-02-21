@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: path.join(__dirname, 'client/app.jsx'),
+  entry: path.join(__dirname, 'client/index.jsx'),
   module: {
     rules: [
       {
