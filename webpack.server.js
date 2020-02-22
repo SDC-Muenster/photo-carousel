@@ -1,16 +1,18 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: path.join(__dirname, 'client/index.jsx'),
+  entry: path.join(__dirname, 'server/index.js'),
+  target: 'node',
+  externals: [nodeExternals()],
   output: {
-    filename: 'bundle.js',
-    path: path.resolve('public'),
+    filename: 'server.js',
+    path: path.resolve('server-build'),
   },
   module: {
     rules: [
       {
         test: /\.js|jsx$/,
-        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -21,7 +23,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          'isomorphic-style-loader',
           'css-loader',
         ],
       },
