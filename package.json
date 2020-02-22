@@ -11,13 +11,14 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "build": "webpack -d",
-    "build-dev": "webpack -d --watch",
+    "start": "node server-build/server.js",
+    "build-server": "webpack --config webpack.server.js -d",
+    "build-react": "webpack --config webpack.config.js -d",
     "seed": "node database/seed.js",
     "data": "node database/writeToCsv.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev:build-server": "NODE_ENV=production webpack --config webpack.server.js --mode=production -w",
+    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon server-build/server.js",
     "dev": "npm-run-all --parallel build dev:*"
   },
