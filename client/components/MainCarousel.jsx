@@ -1,16 +1,16 @@
 import React from 'react';
 import '../styles/Carousel.css';
+// icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import HomeCarousel from './HomeCarousel.jsx';
 import HomeDetail from './HomeDetail.jsx';
 
-//icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
 class MainCarousel extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
-    super(props)
-
+    super(props);
   }
 
   componentDidMount() {
@@ -22,8 +22,8 @@ class MainCarousel extends React.Component {
     // console.log(cards.length);
 
     const getCardWidth = () => {
-      let oneWidth = cards[0].offsetWidth;
-      let totalMargin = cards[0].offsetLeft * 2;
+      let oneWidth = cards.length > 0 ? cards[0].offsetWidth : 0;
+      let totalMargin = cards.length > 0 ? cards[0].offsetLeft * 2 : 0;
 
       return oneWidth + totalMargin;
     }
@@ -71,19 +71,14 @@ class MainCarousel extends React.Component {
   }
 
   render() {
-
-    return(
-
+    return (
       <div className="all-wrapper">
-
         <div className="main-carousel-button-prev is-hidden">
           <FontAwesomeIcon icon={faChevronLeft} />
           </div>
-
         <div className="main-carousel-wrapper">
           <ul className="main-carousel">
             {this.props.homes.map((home) => {
-
               return (
                 <li className="card" key={home.id}>
                   <HomeCarousel
@@ -100,26 +95,18 @@ class MainCarousel extends React.Component {
                   reviews={home.reviews}
                   type={home.type}
                   />
-
                 </li>
-              )
+              );
             })
             }
-
-
           </ul>
         </div>
-
-
         <div className="main-carousel-button-next">
           <FontAwesomeIcon icon={faChevronRight} />
         </div>
-
       </div>
-    )
+    );
   }
-
-
 }
 
 
