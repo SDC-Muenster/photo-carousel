@@ -1,45 +1,42 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import MainCarousel from './components/MainCarousel.jsx'
+import MainCarousel from './components/MainCarousel.jsx';
 import './styles/style.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homes: null
+      homes: [],
     };
-
   }
 
+  componentDidMount() {
+    this.fetchHomes();
+  }
 
-
-  componentDidMount(){
-    const homeId = new URL(window.location.href).searchParams.get('id') || 12345; //changed house_id to id & added a default value
-    console.log(homeId);
+  fetchHomes() {
+    const homeId = new URL(window.location.href).searchParams.get('id') || 12345;
     axios.get('/homes', {
       params: {
-        'id': homeId
-      }
+        id: homeId,
+      },
     })
-    .then((response) => {
-      console.log('response is', response.data); // to be removed
-      this.setState({ homes: response.data}); //changed response.data[0].homes to response.data
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
+      .then((response) => {
+        console.log('response type is', typeof response.data); // to be removed
+        if (Array.isArray(response.data)) {
+          this.setState({ homes: response.data });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
-    const { homes } = this.state;
-
-    if (homes === null) {
-      return null;
-    }
-    return(
+    return (
       <div className="main-wrapper">
         <div className="module-title">
         <div >More homes you may like</div>
@@ -47,11 +44,8 @@ class App extends React.Component {
         {/* Carousel Component */}
         <MainCarousel homes={this.state.homes} />
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('more')
-);
+export default App;
