@@ -28,3 +28,4 @@ public/bundle.js
 *.csv
 _old
 .env
+server-build/

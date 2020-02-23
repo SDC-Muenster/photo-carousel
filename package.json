@@ -12,15 +12,17 @@
   },
   "scripts": {
     "start": "node server-build/server.js",
-    "build-server": "webpack --config webpack.server.js -d",
-    "build-react": "webpack --config webpack.config.js -d",
+    "prod:server": "webpack --config webpack.server.js -d",
+    "prod:react": "webpack --config webpack.config.js -d",
+    "prod": "npm-run-all --parallel prod:*",
     "seed": "node database/seed.js",
     "data": "node database/writeToCsv.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "dev:build-react": "webpack --config webpack.config.js -d -w",
     "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon server-build/server.js",
-    "dev": "npm-run-all --parallel build dev:*"
+    "dev": "npm-run-all --parallel dev:*"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
