@@ -25,7 +25,7 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        console.log('response type is', typeof response.data); // to be removed
+        console.log('response is:', response.data); // to be removed
         if (Array.isArray(response.data)) {
           this.setState({ homes: response.data });
         }
