@@ -18,7 +18,8 @@ class App extends React.Component {
   }
 
   fetchHomes() {
-    const homeId = new URL(window.location.href).searchParams.get('id') || 12345;
+    const randomId = Math.floor(Math.random() * 10000000) + 1;
+    const homeId = new URL(window.location.href).searchParams.get('id') || randomId;
     axios.get('/homes', {
       params: {
         id: homeId,
